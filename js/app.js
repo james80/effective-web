@@ -7,17 +7,13 @@ angular.module('myApp', ['ngRoute', 'myApp.version'])
     templateUrl: 'partials/home.html',
     controller: 'HomeCtrl'
   })
-  .when('/profiles', {
-    templateUrl: 'partials/profiles.html',
-    controller: 'ProfilesCtrl'
+  .when('/companies', {
+    templateUrl: 'partials/companies.html',
+    controller: 'CompaniesCtrl'
   })
-  .when('/categories', {
-    templateUrl: 'partials/categories.html',
-    controller: 'CategoriesCtrl'
-  })
-  .when('/employment', {
-    templateUrl: 'partials/employment.html',
-    controller: 'EmploymentCtrl'
+  .when('/people', {
+    templateUrl: 'partials/people.html',
+    controller: 'PeopleCtrl'
   })
   .when('/accounts', {
     templateUrl: 'partials/accounts.html',
@@ -31,26 +27,43 @@ angular.module('myApp', ['ngRoute', 'myApp.version'])
     templateUrl: 'partials/funds.html',
     controller: 'FundsCtrl'
   })
-  .when('/payroll', {
-    templateUrl: 'partials/payroll.html',
-    controller: 'PayrollCtrl'
+  .when('/billing', {
+    templateUrl: 'partials/billing.html',
+    controller: 'BillingCtrl'
+  })
+  .when('/invoicing', {
+    templateUrl: 'partials/invoicing.html',
+    controller: 'InvoicingCtrl'
   })
   .when('/transactions', {
     templateUrl: 'partials/transactions.html',
     controller: 'TransactionsCtrl'
+  })
+  .when('/payroll', {
+    templateUrl: 'partials/payroll.html',
+    controller: 'PayrollCtrl'
+  })
+  .when('/vendors', {
+    templateUrl: 'partials/vendors.html',
+    controller: 'VendorsCtrl'
+  })
+  .when('/items', {
+    templateUrl: 'partials/items.html',
+    controller: 'ItemsCtrl'
+  })
+  .when('/taxes', {
+    templateUrl: 'partials/taxes.html',
+    controller: 'TaxesCtrl'
   })
   .otherwise({redirectTo: '/home'});
 }])
 .controller('HomeCtrl', [function () {
 
 }])
-.controller('ProfilesCtrl', [function () {
+.controller('CompaniesCtrl', [function () {
 
 }])
-.controller('CategoriesCtrl', [function () {
-
-}])
-.controller('EmploymentCtrl', [function () {
+.controller('PeopleCtrl', [function () {
 
 }])
 .controller('AccountsCtrl', [function () {
@@ -62,10 +75,25 @@ angular.module('myApp', ['ngRoute', 'myApp.version'])
 .controller('FundsCtrl', [function () {
 
 }])
-.controller('PayrollCtrl', [function () {
+.controller('BillingCtrl', [function () {
+
+}])
+.controller('InvoicingCtrl', [function () {
 
 }])
 .controller('TransactionsCtrl', [function () {
+
+}])
+.controller('PayrollCtrl', [function () {
+
+}])
+.controller('VendorsCtrl', [function () {
+
+}])
+.controller('ItemsCtrl', [function () {
+
+}])
+.controller('TaxesCtrl', [function () {
 
 }])
 ;
