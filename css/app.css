@@ -1,5 +1,21 @@
-body
-{
+div.effective {
 	width: 960px;
 	margin: 40px auto;
+}
+
+div.eheader {
+	background-color: #ccccff;
+	border: 2px solid blue;
+}
+
+div.ebody {
+	min-height: 500px;
+
+	background-color: #ccffcc;
+	border: 2px solid green;
+}
+
+div.efooter {
+	background-color: #ffcccc;
+	border: 2px solid red;
 }

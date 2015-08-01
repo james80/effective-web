@@ -1,6 +1,25 @@
 'use strict';
+
+var mockTransactions = [
+  {
+    id: 1,
+    debitAccount: "Utilities - Water",
+    creditAccount: "Credit Card - Visa",
+    description: "Payed water bill.",
+    amount: "87.12"
+  },
+  {
+    id: 2,
+    debitAccount: "Credit Card - Visa",
+    creditAccount: "General Ledger",
+    description: "Payed business card.",
+    amount: "87.12"
+  }
+];
+
 angular.module('myApp', ['ngRoute', 'myApp.version'])
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+  angular.element.ajaxSetup && angular.element.ajaxSetup({cache:true});
   $locationProvider.html5Mode({enabled:true,requireBase:false});
   $routeProvider
   .when('/home', {
@@ -57,43 +76,56 @@ angular.module('myApp', ['ngRoute', 'myApp.version'])
   })
   .otherwise({redirectTo: '/home'});
 }])
-.controller('HomeCtrl', [function () {
+.controller('HomeCtrl', [function ($scope, $http) {
 
 }])
-.controller('CompaniesCtrl', [function () {
+.controller('CompaniesCtrl', [function ($scope, $http) {
 
 }])
-.controller('PeopleCtrl', [function () {
+.controller('PeopleCtrl', [function ($scope, $http) {
 
 }])
-.controller('AccountsCtrl', [function () {
+.controller('AccountsCtrl', [function ($scope, $http) {
 
 }])
-.controller('BankingCtrl', [function () {
+.controller('BankingCtrl', [function ($scope, $http) {
 
 }])
-.controller('FundsCtrl', [function () {
+.controller('FundsCtrl', [function ($scope, $http) {
 
 }])
-.controller('BillingCtrl', [function () {
+.controller('BillingCtrl', [function ($scope, $http) {
 
 }])
-.controller('InvoicingCtrl', [function () {
+.controller('InvoicingCtrl', [function ($scope, $http) {
 
 }])
-.controller('TransactionsCtrl', [function () {
+.controller('TransactionsCtrl', ['$scope', '$http', function ($scope, $http) {
+  $scope.transactions = [];
+//  $scope.getTransactions = function() {
+//    var httpRequest = $http({
+//      method: 'POST',
+//      url: '/echo/json/',
+//      data: mockTransactions
+//    }).success(function(data, status) {
+//      $scope.transactions = data;
+//    });
+//  };
+  $scope.getTransactions = function() {
+    $scope.transactions = mockTransactions;
+  }
+  $scope.getTransactions();
+}])
+.controller('PayrollCtrl', [function ($scope, $http) {
 
 }])
-.controller('PayrollCtrl', [function () {
+.controller('VendorsCtrl', [function ($scope, $http) {
 
 }])
-.controller('VendorsCtrl', [function () {
+.controller('ItemsCtrl', [function ($scope, $http) {
 
 }])
-.controller('ItemsCtrl', [function () {
-
-}])
-.controller('TaxesCtrl', [function () {
+.controller('TaxesCtrl', [function ($scope, $http) {
 
 }])
 ;
