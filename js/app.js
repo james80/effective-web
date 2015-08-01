@@ -1,58 +1,58 @@
 'use strict';
 angular.module('myApp', ['ngRoute', 'myApp.version'])
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode({enabled:true,requireBase:false});
   $routeProvider
   .when('/home', {
-    templateUrl: 'partials/home.html',
+    templateUrl: '/template/home.html',
     controller: 'HomeCtrl'
   })
   .when('/companies', {
-    templateUrl: 'partials/companies.html',
+    templateUrl: '/template/companies.html',
     controller: 'CompaniesCtrl'
   })
   .when('/people', {
-    templateUrl: 'partials/people.html',
+    templateUrl: '/template/people.html',
     controller: 'PeopleCtrl'
   })
   .when('/accounts', {
-    templateUrl: 'partials/accounts.html',
+    templateUrl: '/template/accounts.html',
     controller: 'AccountsCtrl'
   })
   .when('/banking', {
-    templateUrl: 'partials/banking.html',
+    templateUrl: '/template/banking.html',
     controller: 'BankingCtrl'
   })
   .when('/funds', {
-    templateUrl: 'partials/funds.html',
+    templateUrl: '/template/funds.html',
     controller: 'FundsCtrl'
   })
   .when('/billing', {
-    templateUrl: 'partials/billing.html',
+    templateUrl: '/template/billing.html',
     controller: 'BillingCtrl'
   })
   .when('/invoicing', {
-    templateUrl: 'partials/invoicing.html',
+    templateUrl: '/template/invoicing.html',
     controller: 'InvoicingCtrl'
   })
   .when('/transactions', {
-    templateUrl: 'partials/transactions.html',
+    templateUrl: '/template/transactions.html',
     controller: 'TransactionsCtrl'
   })
   .when('/payroll', {
-    templateUrl: 'partials/payroll.html',
+    templateUrl: '/template/payroll.html',
     controller: 'PayrollCtrl'
   })
   .when('/vendors', {
-    templateUrl: 'partials/vendors.html',
+    templateUrl: '/template/vendors.html',
     controller: 'VendorsCtrl'
   })
   .when('/items', {
-    templateUrl: 'partials/items.html',
+    templateUrl: '/template/items.html',
     controller: 'ItemsCtrl'
   })
   .when('/taxes', {
-    templateUrl: 'partials/taxes.html',
+    templateUrl: '/template/taxes.html',
     controller: 'TaxesCtrl'
   })
   .otherwise({redirectTo: '/home'});
