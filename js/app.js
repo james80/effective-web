@@ -17,7 +17,7 @@ var mockTransactions = [
   }
 ];
 
-angular.module('myApp', ['ngRoute', 'myApp.version'])
+var effectiveApp = angular.module('effectiveApp', ['ngRoute', 'effectiveApp.version'])
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   angular.element.ajaxSetup && angular.element.ajaxSetup({cache:true});
   $locationProvider.html5Mode({enabled:true,requireBase:false});
