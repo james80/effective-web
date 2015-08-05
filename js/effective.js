@@ -62,43 +62,46 @@ var effectiveApp = angular.module('effectiveApp', [
   })
   .otherwise({redirectTo: '/home'});
 }])
-.controller('HomeCtrl', [function ($scope) {
+.controller('GlobalCtrl', function($scope) {
+//  window.alert('Global');
+})
+.controller('HomeCtrl', function ($scope) {
 
-}])
-.controller('CompaniesCtrl', [function ($scope) {
+})
+.controller('CompaniesCtrl', function ($scope) {
+//  window.alert('Companies');
+})
+.controller('PeopleCtrl', function ($scope) {
 
-}])
-.controller('PeopleCtrl', [function ($scope) {
+})
+.controller('AccountsCtrl', function ($scope) {
 
-}])
-.controller('AccountsCtrl', [function ($scope) {
+})
+.controller('BankingCtrl', function ($scope) {
 
-}])
-.controller('BankingCtrl', [function ($scope) {
+})
+.controller('FundsCtrl', function ($scope) {
 
-}])
-.controller('FundsCtrl', [function ($scope) {
+})
+.controller('BillingCtrl', function ($scope) {
 
-}])
-.controller('BillingCtrl', [function ($scope) {
+})
+.controller('InvoicingCtrl', function ($scope) {
 
-}])
-.controller('InvoicingCtrl', [function ($scope) {
-
-}])
+})
 .controller('TransactionsCtrl', function ($scope, transactionService) {
   $scope.transactions = transactionService.getTransactions();
 })
-.controller('PayrollCtrl', [function ($scope) {
+.controller('PayrollCtrl', function ($scope) {
 
-}])
-.controller('VendorsCtrl', [function ($scope) {
+})
+.controller('VendorsCtrl', function ($scope) {
 
-}])
-.controller('ItemsCtrl', [function ($scope) {
+})
+.controller('ItemsCtrl', function ($scope) {
 
-}])
-.controller('TaxesCtrl', [function ($scope) {
+})
+.controller('TaxesCtrl', function ($scope) {
 
-}])
+})
 ;
