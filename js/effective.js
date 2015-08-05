@@ -1,23 +1,9 @@
 'use strict';
 
-var mockTransactions = [
-  {
-    id: 1,
-    debitAccount: "Utilities - Water",
-    creditAccount: "Credit Card - Visa",
-    description: "Payed water bill.",
-    amount: "87.12"
-  },
-  {
-    id: 2,
-    debitAccount: "Credit Card - Visa",
-    creditAccount: "General Ledger",
-    description: "Payed business card.",
-    amount: "87.12"
-  }
-];
-
-var effectiveApp = angular.module('effectiveApp', ['ngRoute', 'effectiveApp.version'])
+var effectiveApp = angular.module('effectiveApp', [
+  'ngRoute',
+  'effectiveApp.version',
+  'effectiveApp.service'])
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   angular.element.ajaxSetup && angular.element.ajaxSetup({cache:true});
   $locationProvider.html5Mode({enabled:true,requireBase:false});
@@ -76,56 +62,43 @@ var effectiveApp = angular.module('effectiveApp', ['ngRoute', 'effectiveApp.vers
   })
   .otherwise({redirectTo: '/home'});
 }])
-.controller('HomeCtrl', [function ($scope, $http) {
+.controller('HomeCtrl', [function ($scope) {
 
 }])
-.controller('CompaniesCtrl', [function ($scope, $http) {
+.controller('CompaniesCtrl', [function ($scope) {
 
 }])
-.controller('PeopleCtrl', [function ($scope, $http) {
+.controller('PeopleCtrl', [function ($scope) {
 
 }])
-.controller('AccountsCtrl', [function ($scope, $http) {
+.controller('AccountsCtrl', [function ($scope) {
 
 }])
-.controller('BankingCtrl', [function ($scope, $http) {
+.controller('BankingCtrl', [function ($scope) {
 
 }])
-.controller('FundsCtrl', [function ($scope, $http) {
+.controller('FundsCtrl', [function ($scope) {
 
 }])
-.controller('BillingCtrl', [function ($scope, $http) {
+.controller('BillingCtrl', [function ($scope) {
 
 }])
-.controller('InvoicingCtrl', [function ($scope, $http) {
+.controller('InvoicingCtrl', [function ($scope) {
 
 }])
-.controller('TransactionsCtrl', ['$scope', '$http', function ($scope, $http) {
-  $scope.transactions = [];
-//  $scope.getTransactions = function() {
-//    var httpRequest = $http({
-//      method: 'POST',
-//      url: '/echo/json/',
-//      data: mockTransactions
-//    }).success(function(data, status) {
-//      $scope.transactions = data;
-//    });
-//  };
-  $scope.getTransactions = function() {
-    $scope.transactions = mockTransactions;
-  }
-  $scope.getTransactions();
-}])
-.controller('PayrollCtrl', [function ($scope, $http) {
+.controller('TransactionsCtrl', function ($scope, transactionService) {
+  $scope.transactions = transactionService.getTransactions();
+})
+.controller('PayrollCtrl', [function ($scope) {
 
 }])
-.controller('VendorsCtrl', [function ($scope, $http) {
+.controller('VendorsCtrl', [function ($scope) {
 
 }])
-.controller('ItemsCtrl', [function ($scope, $http) {
+.controller('ItemsCtrl', [function ($scope) {
 
 }])
-.controller('TaxesCtrl', [function ($scope, $http) {
+.controller('TaxesCtrl', [function ($scope) {
 
 }])
 ;
