@@ -68,8 +68,8 @@ var effectiveApp = angular.module('effectiveApp', [
 .controller('HomeCtrl', function ($scope) {
 
 })
-.controller('CompaniesCtrl', function ($scope) {
-//  window.alert('Companies');
+.controller('CompaniesCtrl', function ($scope, companyService) {
+  $scope.companies = companyService.getCompanies();
 })
 .controller('PeopleCtrl', function ($scope) {
 
