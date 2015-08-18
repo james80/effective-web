@@ -6,11 +6,13 @@
   "license": "AGPL",
   "private": true,
   "dependencies": {
-    "angular": "1.2.x",
-    "angular-route": "1.2.x",
-    "angular-loader": "1.2.x",
-    "angular-mocks": "~1.2.x",
-    "html5-boilerplate": "~4.3.0",
+    "jquery": "2.1.4",
+    "DataTables": "1.10.8",
+    "angular": "1.4.4",
+    "angular-route": "1.4.4",
+    "angular-loader": "1.4.4",
+    "angular-mocks": "1.4.4",
+    "html5-boilerplate": "5.2.0",
     "bootstrap": "3.3.5"
   }
 }
