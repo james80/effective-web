@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('effectiveApp.service', [])
+angular.module('effectiveApp.service', ['ngResource'])
 
 .factory('transactionService', function() {
 
@@ -27,24 +27,9 @@ angular.module('effectiveApp.service', [])
   };
 })
 
-.factory('companyService', function() {
-
-  function getCompanies() {
-    return [
-    {
-      id: 10000001,
-      name: "Awesome Company #1",
-      description: "This company is really awesome!"
-    },
-    {
-      id: 10000002,
-      name: "Super Company #2",
-      description: "This is super company!"
-    }];
-  }
-
-  return {
-    getCompanies: getCompanies
-  };
+.factory('companyService', function ($resource) {
+    return $resource('test/data/companies.json', {}, {
+      query: { method: 'GET', params: {}, isArray: true }
+    });
 })
 ;

@@ -69,7 +69,7 @@ var effectiveApp = angular.module('effectiveApp', [
 
 })
 .controller('CompaniesCtrl', function ($scope, companyService) {
-  $scope.companies = companyService.getCompanies();
+  $scope.companies = companyService.query();
 })
 .controller('PeopleCtrl', function ($scope) {
 

@@ -1,0 +1,12 @@
+﻿[
+  {
+    "id": 10000001,
+    "name": "Awesome Company #1",
+    "description": "This company is really awesome!"
+  },
+  {
+    "id": 10000002,
+    "name": "Super Company #2",
+    "description": "This is a super company!"
+  }
+]
