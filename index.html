@@ -20,63 +20,67 @@
 <body>
 
   <div class="effective">
-    <div class="eheader">
-      <div class="btn-group" role="group">
-        <a href="/home" class="btn btn-default" role="button">Home</a>
-        <div class="btn-group" role="group">
-          <button class="btn btn-default dropdown-toggle" type="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Manage
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="/companies">Companies</a></li>
-            <li><a href="/people">People</a></li>
-          </ul>
-        </div>
-        <div class="btn-group" role="group">
-          <button class="btn btn-default dropdown-toggle" type="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Finance
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="/banking">Banking</a></li>
-            <li><a href="/accounts">Accounts</a></li>
-            <li><a href="/funds">Funds</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="/billing">Billing</a></li>
-            <li><a href="/invoicing">Invoicing</a></li>
-            <li><a href="/transactions">Transactions</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="/payroll">Payroll</a></li>
-          </ul>
-        </div>
-        <div class="btn-group" role="group">
-          <button class="btn btn-default dropdown-toggle" type="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Commerce
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="/vendors">Vendors</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="/items">Items</a></li>
-            <li><a href="/taxes">Taxes</a></li>
-          </ul>
-        </div>
-      </div>
+    <div class="eheader container">
+      <nav>
+        <ul class="nav nav-justified">
+          <li>
+            <a href="/home" class="btn btn-default" role="button">Home</a>
+          </li>
+          <li>
+            <a class="btn btn-default dropdown-toggle" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Manage
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/companies">Companies</a></li>
+              <li><a href="/people">People</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="btn btn-default dropdown-toggle" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Finance
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/banking">Banking</a></li>
+              <li><a href="/accounts">Accounts</a></li>
+              <li><a href="/funds">Funds</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/billing">Billing</a></li>
+              <li><a href="/invoicing">Invoicing</a></li>
+              <li><a href="/transactions">Transactions</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/payroll">Payroll</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="btn btn-default dropdown-toggle" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Commerce
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/vendors">Vendors</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/items">Items</a></li>
+              <li><a href="/taxes">Taxes</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </div>
 
     <!--[if lt IE 9]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="ebody" ng-controller="GlobalCtrl">
+    <div class="ebody container" ng-controller="GlobalCtrl">
       <div ng-view class="content"></div>
     </div>
 
-    <div class="efooter col-sm-12">Effective v<span effective-version></span>. Copyright 2014 - 2015 Cathari Software. All rights reserved.</div>
+    <div class="efooter container">Effective v<span effective-version></span>. Copyright 2014 - 2015 Cathari Software. All rights reserved.</div>
   </div>
 
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
