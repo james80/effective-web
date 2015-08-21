@@ -3,53 +3,53 @@ if(typeof effectiveApp === 'undefined') {
   window.location.replace("/index.html");
 }
 </script>
-<h1>Define your companies.</h1>
-<div class="esubmenu">
-  <div class="nav">
-	<ul>
-	  <li>Add Company</li>
-	</ul>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><strong>Companies</strong></h3>
   </div>
-</div>
-<div class="container">
-  <form class="form-inline">
-    <div class="form-group">
-      <di class="input-group">
-        <div class="input-group-addon">
-          <span class="glyphicon glyphicon-filter" />
+  <div class="panel-body">
+    <button type="button" class="btn btn-default">Add Company</button>
+    <hr />
+    <form class="form">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-filter" />
+            </div>
+            <input id="companyFilter" type="text" class="form-control" ng-model="companyFilter" placeholder="Filter Company Name">
+          </div>
         </div>
-        <input id="companyFilter" type="text" class="form-control" ng-model="companyFilter" placeholder="Filter Company Name">
-      </di>
-    </div>
-  </form>
-  <table class="table table-condensed">
-    <thead>
+      </div>
+    </form>
+    <table class="table table-condensed">
+      <thead>
       <tr>
         <th>
           <div class="col-sm-2">
             <a role="button" ng-click="companySort='id'; companySortReverse = !companySortReverse">
               Company ID
-              <span ng-show="companySort == 'id'">
-                <span ng-show="!companySortReverse" class="glyphicon glyphicon-triangle-top" />
-                <span ng-show="companySortReverse" class="glyphicon glyphicon-triangle-bottom" />
-              </span>
+            <span ng-show="companySort == 'id'">
+              <span ng-show="!companySortReverse" class="glyphicon glyphicon-triangle-top" />
+              <span ng-show="companySortReverse" class="glyphicon glyphicon-triangle-bottom" />
+            </span>
             </a>
           </div>
           <div class="col-sm-4">
             <a role="button" ng-click="companySort='name'; companySortReverse = !companySortReverse">
               Company Name
-              <span ng-show="companySort == 'name'">
-                <span ng-show="!companySortReverse" class="glyphicon glyphicon-triangle-top" />
-                <span ng-show="companySortReverse" class="glyphicon glyphicon-triangle-bottom" />
-              </span>
+            <span ng-show="companySort == 'name'">
+              <span ng-show="!companySortReverse" class="glyphicon glyphicon-triangle-top" />
+              <span ng-show="companySortReverse" class="glyphicon glyphicon-triangle-bottom" />
+            </span>
             </a>
           </div>
           <div class="col-sm-4">Description</div>
           <div class="col-sm-2">Action</div>
         </th>
       </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
       <tr ng-repeat="company in companies | orderBy:companySort:companySortReverse | filter:companyFilter">
         <td>
           <div class="col-sm-2"><strong>{{company.id}}</strong></div>
@@ -58,7 +58,8 @@ if(typeof effectiveApp === 'undefined') {
           <div class="col-sm-2"><button>Edit</button><button>Delete</button></div>
         </td>
       </tr>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </div>
 <script type="text/javascript" src="js/companies.js"></script>

@@ -3,18 +3,18 @@ div.effective {
 }
 
 div.eheader {
-	background-color: #ccccff;
+#	background-color: #ccccff;
 	border: 2px solid blue;
 }
 
 div.ebody {
 	min-height: 500px;
 
-	background-color: #ccffcc;
+#	background-color: #ccffcc;
 	border: 2px solid green;
 }
 
 div.efooter {
-	background-color: #ffcccc;
+#	background-color: #ffcccc;
 	border: 2px solid red;
 }
