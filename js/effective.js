@@ -69,8 +69,9 @@ var effectiveApp = angular.module('effectiveApp', [
 
 })
 .controller('CompaniesCtrl', function ($scope, companyService) {
-  $scope.orderByField = "id";
-  $scope.reverseSort = false;
+  $scope.companySort = 'id';
+  $scope.companySortReverse = false;
+  $scope.companyFilter = '';
   $scope.companies = companyService.query();
 })
 .controller('PeopleCtrl', function ($scope) {
