@@ -16,22 +16,36 @@ if(typeof effectiveApp === 'undefined') {
     <thead>
       <tr>
         <th>
-          <div class="col-sm-2"><strong>Company ID</strong></div>
-          <div class="col-sm-3">Company Name</div>
-          <div class="col-sm-3">Description</div>
-          <div class="col-sm-2">Edit</div>
-          <div class="col-sm-2">Delete</div>
+          <div class="col-sm-2">
+            <a role="button" ng-click="orderByField='id'; reverseSort = !reverseSort">
+              Company ID
+              <span ng-show="orderByField == 'id'">
+                <span ng-show="!reverseSort" class="glyphicon glyphicon-triangle-top" />
+                <span ng-show="reverseSort" class="glyphicon glyphicon-triangle-bottom" />
+              </span>
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <a role="button" ng-click="orderByField='name'; reverseSort = !reverseSort">
+              Company Name
+              <span ng-show="orderByField == 'name'">
+                <span ng-show="!reverseSort" class="glyphicon glyphicon-triangle-top" />
+                <span ng-show="reverseSort" class="glyphicon glyphicon-triangle-bottom" />
+              </span>
+            </a>
+          </div>
+          <div class="col-sm-4">Description</div>
+          <div class="col-sm-2">Action</div>
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="company in companies">
+      <tr ng-repeat="company in companies | orderBy:orderByField:reverseSort">
         <td>
           <div class="col-sm-2"><strong>{{company.id}}</strong></div>
-          <div class="col-sm-3">{{company.name}}</div>
-          <div class="col-sm-3">{{company.description}}</div>
-          <div class="col-sm-2"><button>Edit</button></div>
-          <div class="col-sm-2"><button>Delete</button></div>
+          <div class="col-sm-4">{{company.name}}</div>
+          <div class="col-sm-4">{{company.description}}</div>
+          <div class="col-sm-2"><button>Edit</button><button>Delete</button></div>
         </td>
       </tr>
     </tbody>
