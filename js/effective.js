@@ -2,8 +2,10 @@
 
 var effectiveApp = angular.module('effectiveApp', [
   'ngRoute',
-  'effectiveApp.version',
-  'effectiveApp.service'])
+  'effectiveApp.service',
+  'effectiveApp.filter',
+  'effectiveApp.directive'])
+.value('version', '0.1-SNAPSHOT')
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   angular.element.ajaxSetup && angular.element.ajaxSetup({cache:true});
   $locationProvider.html5Mode({enabled:true,requireBase:false});

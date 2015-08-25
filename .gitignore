@@ -3,6 +3,7 @@ target
 
 # Web #
 bower_components
+node_modules
 
 # Java #
 *.class
