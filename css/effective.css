@@ -4,17 +4,25 @@ div.effective {
 
 div.eheader {
 #	background-color: #ccccff;
-	border: 2px solid blue;
+#	border: 2px solid blue;
 }
 
 div.ebody {
-	min-height: 500px;
+	min-height: 450px;
 
 #	background-color: #ccffcc;
-	border: 2px solid green;
+#	border: 2px solid green;
 }
 
 div.efooter {
 #	background-color: #ffcccc;
-	border: 2px solid red;
+#	border: 2px solid red;
+}
+
+.row_odd {
+  background-color: #c2c2ff;
+}
+
+.row_even {
+  background-color: #ededff;
 }

@@ -51,7 +51,7 @@ if(typeof effectiveApp === 'undefined') {
       </thead>
       <tbody>
       <tr ng-repeat="company in companies | orderBy:companySort:companySortReverse | filter:companyFilter">
-        <td>
+        <td ng-class-odd="'row_odd'" ng-class-even="'row_even'">
           <div class="col-sm-2"><strong>{{company.id}}</strong></div>
           <div class="col-sm-4">{{company.name}}</div>
           <div class="col-sm-4">{{company.description}}</div>
