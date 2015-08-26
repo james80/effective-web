@@ -44,8 +44,8 @@ if(typeof effectiveApp === 'undefined') {
             </span>
             </a>
           </div>
-          <div class="col-sm-4">Description</div>
-          <div class="col-sm-2">Action</div>
+          <div class="col-sm-5">Description</div>
+          <div class="col-sm-1">Action</div>
         </th>
       </tr>
       </thead>
@@ -54,8 +54,11 @@ if(typeof effectiveApp === 'undefined') {
         <td ng-class-odd="'row_odd'" ng-class-even="'row_even'">
           <div class="col-sm-2"><strong>{{company.id}}</strong></div>
           <div class="col-sm-4">{{company.name}}</div>
-          <div class="col-sm-4">{{company.description}}</div>
-          <div class="col-sm-2"><button>Edit</button><button>Delete</button></div>
+          <div class="col-sm-5">{{company.description}}</div>
+          <div class="col-sm-1 pull-right">
+            <a role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a role="button"><span class="glyphicon glyphicon-remove"></span></a>
+          </div>
         </td>
       </tr>
       </tbody>
