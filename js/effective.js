@@ -1,10 +1,11 @@
 'use strict';
 
-var effectiveApp = angular.module('effectiveApp', [
-  'ngRoute',
-  'effectiveApp.service',
-  'effectiveApp.filter',
-  'effectiveApp.directive'])
+var effectiveApp = angular.module('effectiveApp', ['ngRoute'
+  ,'effectiveApp.service'
+  ,'effectiveApp.filter'
+  ,'effectiveApp.directive'
+  ,'ngMockE2E'
+  ])
 .value('version', '0.1-SNAPSHOT')
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   angular.element.ajaxSetup && angular.element.ajaxSetup({cache:true});

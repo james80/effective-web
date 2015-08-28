@@ -28,7 +28,7 @@ angular.module('effectiveApp.service', ['ngResource'])
 })
 
 .factory('companyService', function ($resource) {
-    return $resource('test/data/companies.json', {}, {
+    return $resource('/data/companies', {}, {
       query: { method: 'GET', params: {}, isArray: true }
     });
 })
