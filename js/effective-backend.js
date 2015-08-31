@@ -1,8 +1,32 @@
 'use strict';
 
-var effectiveApp = angular.module('effectiveApp');
+angular.module('effectiveApp')
 
-effectiveApp.run(function($httpBackend, $http) {
+// Simulates back-end delay.
+.config(function($provide) {
+  $provide.decorator('$httpBackend', function($delegate) {
+    var proxy = function(method, url, data, callback, headers) {
+      var timer = 0;
+      if (url.match(/^\/data/) ) {
+        timer = Math.floor((Math.random() * 1500) + 500);
+      }
+      var interceptor = function() {
+        var _this = this,
+            _arguments = arguments;
+        setTimeout(function () {
+          callback.apply(_this, _arguments);
+        }, timer);
+      };
+      return $delegate.call(this, method, url, data, interceptor, headers);
+    };
+    for(var key in $delegate) {
+        proxy[key] = $delegate[key];
+    }
+    return proxy;
+  });
+})
+
+.run(function($httpBackend, $http) {
 
   $httpBackend.whenGET(/template\//).passThrough();
   $httpBackend.whenGET(/test\//).passThrough();
