@@ -20,7 +20,7 @@
 <body>
 
   <div class="effective">
-    <div class="eheader container">
+    <div class="container">
       <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -76,11 +76,16 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="ebody container" ng-controller="GlobalCtrl">
+    <div class="loader-container" effective-loader></div>
+    <div class="loader-gif" effective-loader>
+      <img src="img/polyfill-loader.gif" />
+    </div>
+
+    <div class="effective-body container" ng-controller="GlobalCtrl">
       <div ng-view class="content"></div>
     </div>
 
-    <div class="efooter container">
+    <div class="container">
       <div class="well well-sm">
       Effective v<span effective-version></span>. Copyright 2014 - 2015 Quattro Gatti Software. All rights reserved.
       </div>

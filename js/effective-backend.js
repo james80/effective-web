@@ -9,6 +9,8 @@ angular.module('effectiveApp')
       var timer = 0;
       if (url.match(/^\/data/) ) {
         timer = Math.floor((Math.random() * 1500) + 500);
+      } else {
+        timer = Math.floor((Math.random() * 700) + 500);
       }
       var interceptor = function() {
         var _this = this,
