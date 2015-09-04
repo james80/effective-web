@@ -1,9 +1,9 @@
 {
   "name": "effective-web",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Effective - Copyright Quattro Gatti Software.",
-  "repository": "https://github.com/angular/angular-seed",
+  "repository": "http://development.effective.divshot.io/",
   "license": "AGPL",
   "devDependencies": {
     "karma": "~0.10",

@@ -3,26 +3,86 @@ if(typeof effectiveApp === 'undefined') {
   window.location.replace("/index.html");
 }
 </script>
-<div>
-  <table id="tlog" datatable="ng">
-    <thead>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><strong>Transactions</strong></h3>
+  </div>
+  <div class="panel-body">
+    <button type="button" class="btn btn-default">Add Transaction</button>
+    <hr />
+    <form class="form">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-filter" />
+            </div>
+            <input id="transactionFilter" type="text" class="form-control" ng-model="transactionFilter" placeholder="Filter Transactions">
+          </div>
+        </div>
+      </div>
+    </form>
+    <table class="table table-condensed">
+      <thead>
       <tr>
-        <th>Transaction ID</th>
-        <th>Debit Account</th>
-        <th>Credit Account</th>
-        <th>Description</th>
-        <th>Amount</th>
+        <th>
+          <div class="col-sm-2">
+            <a role="button" ng-click="transactionSort='id'; transactionSortReverse = !transactionSortReverse">
+              Transaction ID
+            <span ng-show="transactionSort == 'id'">
+              <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
+              <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
+            </span>
+            </a>
+          </div>
+          <div class="col-sm-2">
+            <a role="button" ng-click="transactionSort='debitAccount'; transactionSortReverse = !transactionSortReverse">
+              Debit Account
+            <span ng-show="transactionSort == 'debitAccount'">
+              <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
+              <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
+            </span>
+            </a>
+          </div>
+          <div class="col-sm-2">
+            <a role="button" ng-click="transactionSort='creditAccount'; transactionSortReverse = !transactionSortReverse">
+              Credit Account
+            <span ng-show="transactionSort == 'creditAccount'">
+              <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
+              <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
+            </span>
+            </a>
+          </div>
+          <div class="col-sm-3">Description</div>
+          <div class="col-sm-2">
+            <a role="button" ng-click="transactionSort='amount'; transactionSortReverse = !transactionSortReverse">
+              Amount
+            <span ng-show="transactionSort == 'amount'">
+              <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
+              <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
+            </span>
+            </a>
+          </div>
+          <div class="col-sm-1">Action</div>
+        </th>
       </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="transaction in transactions">
-        <td>{{transaction.id}}</td>
-        <td>{{transaction.debitAccount}}</td>
-        <td>{{transaction.creditAccount}}</td>
-        <td>{{transaction.description}}</td>
-        <td>{{transaction.amount}}</td>
+      </thead>
+      <tbody>
+      <tr ng-repeat="transaction in transactions | orderBy:transactionSort:transactionSortReverse | filter:transactionFilter">
+        <td ng-class-odd="'row_odd'" ng-class-even="'row_even'">
+          <div class="col-sm-2"><strong>{{transaction.id}}</strong></div>
+          <div class="col-sm-2">{{transaction.debitAccount}}</div>
+          <div class="col-sm-2">{{transaction.creditAccount}}</div>
+          <div class="col-sm-3">{{transaction.description}}</div>
+          <div class="col-sm-2">{{transaction.amount}}</div>
+          <div class="col-sm-1">
+            <a role="button"><span class="glyphicon glyphicon-pencil pull-left"></span></a>
+            <a role="button"><span class="glyphicon glyphicon-remove pull-right"></span></a>
+          </div>
+        </td>
       </tr>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </div>
 <script type="text/javascript" src="js/transactions.js"></script>

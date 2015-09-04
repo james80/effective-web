@@ -96,7 +96,10 @@ var effectiveApp = angular.module('effectiveApp', ['ngRoute'
 
 })
 .controller('TransactionsCtrl', function ($scope, transactionService) {
-  $scope.transactions = transactionService.getTransactions();
+  $scope.transactionSort = 'id';
+  $scope.transactionSortReverse = false;
+  $scope.transactionFilter = '';
+  $scope.transactions = transactionService.query();
 })
 .controller('PayrollCtrl', function ($scope) {
 

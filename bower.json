@@ -2,12 +2,11 @@
   "name": "effective-web",
   "description": "Effective - Copyright Quattro Gatti Software.",
   "version": "0.1",
-  "homepage": "https://github.com/",
+  "homepage": "http://development.effective.divshot.io/",
   "license": "AGPL",
   "private": true,
   "dependencies": {
     "jquery": "2.1.4",
-    "DataTables": "1.10.8",
     "angular": "1.4.4",
     "angular-route": "1.4.4",
     "angular-resource": "1.4.4",

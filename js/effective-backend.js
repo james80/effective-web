@@ -37,11 +37,17 @@ angular.module('effectiveApp')
   var companies = [];
   $http.get('test/data/companies.json')
     .then(function(res) {
-        companies = res.data;
+      companies = res.data;
+    });
+
+  var transactions = [];
+  $http.get('test/data/transactions.json')
+    .then(function(res) {
+      transactions = res.data;
     });
 
   $httpBackend.whenPOST('/data/companies').respond(function(method, url, data, headers) {
-    console.log('Received these data:', method, url, data, headers);
+    console.log('Received these data for company:', method, url, data, headers);
     companies.push(angular.fromJson(data));
     return [200, {}, {}];
   });
@@ -49,6 +55,17 @@ angular.module('effectiveApp')
   $httpBackend.whenGET('/data/companies').respond(function(method,url,data) {
     console.log("Getting companies");
     return [200, companies, {}];
+  });
+
+  $httpBackend.whenPOST('/data/transactions').respond(function(method, url, data, headers) {
+    console.log('Received these data for transaction:', method, url, data, headers);
+    companies.push(angular.fromJson(data));
+    return [200, {}, {}];
+  });
+
+  $httpBackend.whenGET('/data/transactions').respond(function(method,url,data) {
+    console.log("Getting transactions");
+    return [200, transactions, {}];
   });
 
 });
