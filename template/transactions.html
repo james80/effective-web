@@ -10,58 +10,102 @@ if(typeof effectiveApp === 'undefined') {
   <div class="panel-body">
     <button type="button" class="btn btn-default">Add Transaction</button>
     <hr />
-    <form class="form">
-      <div class="form-group">
-        <div class="col-sm-12">
-          <div class="input-group">
-            <div class="input-group-addon">
-              <span class="glyphicon glyphicon-filter" />
-            </div>
-            <input id="transactionFilter" type="text" class="form-control" ng-model="transactionFilter" placeholder="Filter Transactions">
-          </div>
-        </div>
-      </div>
-    </form>
     <table class="table table-condensed">
       <thead>
       <tr>
         <th>
           <div class="col-sm-2">
-            <a role="button" ng-click="transactionSort='id'; transactionSortReverse = !transactionSortReverse">
-              Transaction ID
-            <span ng-show="transactionSort == 'id'">
-              <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
-              <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
-            </span>
-            </a>
+            <div>
+              <a role="button" ng-click="transactionSort='id'; transactionSortReverse = !transactionSortReverse">
+                Transaction ID
+                <span ng-show="transactionSort == 'id'">
+                  <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
+                  <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
+                </span>
+              </a>
+            </div>
+            <div>
+              <form class="form">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" class="form-control" ng-model="transactionFilter.id" placeholder="Filter ID...">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-filter" />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
           <div class="col-sm-2">
-            <a role="button" ng-click="transactionSort='debitAccount'; transactionSortReverse = !transactionSortReverse">
-              Debit Account
-            <span ng-show="transactionSort == 'debitAccount'">
-              <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
-              <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
-            </span>
-            </a>
+            <div>
+              <a role="button" ng-click="transactionSort='debitAccount'; transactionSortReverse = !transactionSortReverse">
+                Debit Account
+                <span ng-show="transactionSort == 'debitAccount'">
+                  <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
+                  <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
+                </span>
+              </a>
+            </div>
+            <div>
+              <form class="form">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" class="form-control" ng-model="transactionFilter.debitAccount" placeholder="Filter Debit...">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-filter" />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
           <div class="col-sm-2">
-            <a role="button" ng-click="transactionSort='creditAccount'; transactionSortReverse = !transactionSortReverse">
-              Credit Account
-            <span ng-show="transactionSort == 'creditAccount'">
-              <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
-              <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
-            </span>
-            </a>
+            <div>
+              <a role="button" ng-click="transactionSort='creditAccount'; transactionSortReverse = !transactionSortReverse">
+                Credit Account
+                <span ng-show="transactionSort == 'creditAccount'">
+                  <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
+                  <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
+                </span>
+              </a>
+            </div>
+            <div>
+              <form class="form">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" class="form-control" ng-model="transactionFilter.creditAccount" placeholder="Filter Credit...">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-filter" />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
           <div class="col-sm-3">Description</div>
           <div class="col-sm-2">
-            <a role="button" ng-click="transactionSort='amount'; transactionSortReverse = !transactionSortReverse">
-              Amount
-            <span ng-show="transactionSort == 'amount'">
-              <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
-              <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
-            </span>
-            </a>
+            <div>
+              <a role="button" ng-click="transactionSort='amount'; transactionSortReverse = !transactionSortReverse">
+                Amount
+                <span ng-show="transactionSort == 'amount'">
+                  <span ng-show="!transactionSortReverse" class="glyphicon glyphicon-triangle-top" />
+                  <span ng-show="transactionSortReverse" class="glyphicon glyphicon-triangle-bottom" />
+                </span>
+              </a>
+            </div>
+            <div>
+              <form class="form">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" class="form-control" ng-model="transactionFilter.amount" placeholder="Filter Amount...">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-filter" />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
           <div class="col-sm-1">Action</div>
         </th>
