@@ -1,7 +1,0 @@
-{
-  "name": "effective",
-  "cache_control": {},
-  "routes": {
-    "**": "index.html"
-  }
-}

@@ -1,21 +1,6 @@
-# Maven #
-target
-
 # Web #
-bower_components
 node_modules
-
-# Java #
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
 
 # IDEA #
 .idea
 *.iml
-
-# Visual Studio #
-Web.config
