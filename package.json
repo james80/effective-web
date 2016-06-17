@@ -17,5 +17,7 @@
     "pretest": "npm install",
     "storybook": "start-storybook -p 9001",
     "reactpack-build": "reactpack src/index.js --clean"
-  }
+
+  },
+  "engine": "node 6.2.1"
 }
