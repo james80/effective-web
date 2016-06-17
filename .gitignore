@@ -1,9 +1,0 @@
-# Travis CI #
-dist
-
-# Web #
-node_modules
-
-# IDEA #
-.idea
-*.iml

@@ -18,7 +18,7 @@
   <title>Effective</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+<link href="bundle.css" rel="stylesheet"></head>
 <body>
 
 <div class="effective">
@@ -99,8 +99,6 @@
   </div>
 </div>
 
-<% if (htmlWebpackPlugin.options.dev) { %>
-<script src="http://localhost:<%= htmlWebpackPlugin.options.port %>/webpack-dev-server.js"></script>
-<% } %>
-</body>
+
+<script type="text/javascript" src="bundle.js"></script></body>
 </html>

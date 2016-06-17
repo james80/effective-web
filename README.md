@@ -1,2 +1,0 @@
-# effective-web
-effective-web
