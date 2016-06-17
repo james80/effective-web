@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8">
+<![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+  <title>Effective</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="effective">
+  <!--<div class="container">-->
+  <!--<nav class="navbar navbar-default" role="navigation">-->
+  <!--<div class="navbar-header">-->
+  <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"-->
+  <!--data-target="#navbar">-->
+  <!--<span class="sr-only">Toggle navigation</span>-->
+  <!--<span class="icon-bar"></span>-->
+  <!--<span class="icon-bar"></span>-->
+  <!--<span class="icon-bar"></span>-->
+  <!--</button>-->
+  <!--<a class="navbar-brand" href="#"></a>-->
+  <!--</div>-->
+  <!--<div id="navbar" class="navbar-collapse collapse">-->
+  <!--<ul class="nav navbar-nav">-->
+  <!--<li><a id="Home" href="/home"> Home </a></li>-->
+  <!--<li class="dropdown">-->
+  <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Manage <span-->
+  <!--class="caret"></span></a>-->
+  <!--<ul class="dropdown-menu" role="menu">-->
+  <!--<li><a href="/companies">Companies</a></li>-->
+  <!--<li><a href="/people">People</a></li>-->
+  <!--<li><a href="#"></a></li>-->
+  <!--</ul>-->
+  <!--</li>-->
+  <!--<li class="dropdown">-->
+  <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Finance <span-->
+  <!--class="caret"></span></a>-->
+  <!--<ul class="dropdown-menu" role="menu">-->
+  <!--<li><a href="/banking">Banking</a></li>-->
+  <!--<li><a href="/accounts">Accounts</a></li>-->
+  <!--<li><a href="/funds">Funds</a></li>-->
+  <!--<li role="separator" class="divider"></li>-->
+  <!--<li><a href="/billing">Billing</a></li>-->
+  <!--<li><a href="/invoicing">Invoicing</a></li>-->
+  <!--<li><a href="/transactions">Transactions</a></li>-->
+  <!--<li role="separator" class="divider"></li>-->
+  <!--<li><a href="/payroll">Payroll</a></li>-->
+  <!--<li><a href="#"></a></li>-->
+  <!--</ul>-->
+  <!--</li>-->
+  <!--<li class="dropdown">-->
+  <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Commerce <span-->
+  <!--class="caret"></span></a>-->
+  <!--<ul class="dropdown-menu" role="menu">-->
+  <!--<li><a href="/vendors">Vendors</a></li>-->
+  <!--<li role="separator" class="divider"></li>-->
+  <!--<li><a href="/items">Items</a></li>-->
+  <!--<li><a href="/taxes">Taxes</a></li>-->
+  <!--<li><a href="#"></a></li>-->
+  <!--</ul>-->
+  <!--</li>-->
+  <!--</ul>-->
+  <!--</div>-->
+  <!--</nav>-->
+  <!--</div>-->
+
+  <!--[if lt IE 9]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a
+      href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!--<div class="loader-container"></div>-->
+  <!--<div class="loader-gif">-->
+  <!--<img src="img/polyfill-loader.gif"/>-->
+  <!--</div>-->
+
+  <div class="effective-body container">
+    <div id="react-app" class="content"></div>
+  </div>
+
+  <div class="container">
+    <div class="well well-sm">
+      Effective. Copyright 2014 - 2015 Quattro Gatti Software. All rights reserved.
+    </div>
+  </div>
+</div>
+
+<% if (htmlWebpackPlugin.options.dev) { %>
+<script src="http://localhost:<%= htmlWebpackPlugin.options.port %>/webpack-dev-server.js"></script>
+<% } %>
+</body>
+</html>

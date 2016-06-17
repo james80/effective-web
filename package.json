@@ -6,12 +6,16 @@
   "repository": "http://development.effective.divshot.io/",
   "license": "AGPL",
   "dependencies": {
-    "react": "15.0.1"
+    "bootstrap": "^3.3.6",
+    "react": "^15.1.0",
+    "react-dom": "15.1.0"
   },
   "devDependencies": {
+    "reactpack": "^0.4.0"
   },
   "scripts": {
     "pretest": "npm install",
-    "storybook": "start-storybook -p 9001"
+    "storybook": "start-storybook -p 9001",
+    "reactpack-build": "reactpack src/index.js --clean"
   }
 }

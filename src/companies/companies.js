@@ -45,9 +45,9 @@ const Companies = (props) => {
             <tbody>
             <tr>
               <td>
-                <div class="col-sm-2"><strong>{ company.id }</strong></div>
-                <div class="col-sm-4">{ company.name }</div>
-                <div class="col-sm-5">{ company.description }</div>
+                <div class="col-sm-2"><strong>Company ID</strong></div>
+                <div class="col-sm-4">Company Name</div>
+                <div class="col-sm-5">Company Description</div>
                 <div class="col-sm-1">
                   <a role="button"><span class="glyphicon glyphicon-pencil pull-left"></span></a>
                   <a role="button"><span class="glyphicon glyphicon-remove pull-right"></span></a>
