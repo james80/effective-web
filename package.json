@@ -8,16 +8,16 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "react": "^15.1.0",
-    "react-dom": "15.1.0"
+    "react-dom": "^15.1.0"
   },
   "devDependencies": {
+    "@kadira/storybook": "^1.33.0",
     "reactpack": "^0.4.0"
   },
   "scripts": {
     "pretest": "npm install",
-    "storybook": "start-storybook -p 9001",
+    "start": "start-storybook -p 9001",
     "reactpack-build": "reactpack src/index.js"
-
   },
   "engine": "node 6.2.1"
 }
