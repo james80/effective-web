@@ -5,7 +5,7 @@ SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
 function doCompile {
-  npm run reactpack-build
+  npm run webpack
   cp dist/* out/
 }
 

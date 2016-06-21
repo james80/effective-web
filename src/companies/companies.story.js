@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 import Companies from './companies';
-import './companies.css';
 
 const sharedCompany = {
   id: '12345',
@@ -10,11 +9,12 @@ const sharedCompany = {
 };
 
 storiesOf('Companies', module)
+
     .add('No Companies', () => (
-        <Companies companies={ [ ] } />
+        <Companies companies={ [ ] }/>
     ))
 
-    //.add('One Company', () => (
-    //    <Companies companies={ [ { ...sharedCompany, id:5432 } ] } />
-    //))
+    .add('One Company', () => (
+        <Companies companies={ [ { ...sharedCompany, id:'5432' } ] }/>
+    ))
 ;

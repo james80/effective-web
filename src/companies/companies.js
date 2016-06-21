@@ -1,5 +1,4 @@
 import React from 'react';
-import './companies.css';
 
 const Companies = (props) => {
 
