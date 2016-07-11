@@ -1,6 +1,8 @@
-import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
-import Companies from './companies';
+import React from "react";
+import {storiesOf, action, linkTo} from "@kadira/storybook";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import getMuiTheme from "material-ui/styles/getMuiTheme";
+import Companies from "./companies";
 
 const sharedCompany = {
   id: '12345',
@@ -9,6 +11,12 @@ const sharedCompany = {
 };
 
 storiesOf('Companies', module)
+
+    .addDecorator(story => (
+        <MuiThemeProvider muiTheme={getMuiTheme()}>
+          {story()}
+        </MuiThemeProvider>
+    ))
 
     .add('No Companies', () => (
         <Companies companies={ [ ] }/>

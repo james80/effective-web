@@ -1,38 +1,51 @@
-import React from 'react';
-import ReactDataGrid from 'react-data-grid';
-import NoRecords from '../../shared/no-records'
+import React from "react";
+import {
+    Table,
+    TableBody,
+    TableHeader,
+    TableHeaderColumn,
+    TableRow,
+    TableRowColumn
+} from "material-ui/Table";
+import ContentClear from "material-ui/svg-icons/content/clear";
+import ImageEdit from "material-ui/svg-icons/image/edit";
 
 const CompaniesGrid = (props) => {
 
   const handleEditCompany = (id) => props.editCompanyCallback(id);
   const handleDeleteCompany = (id) => props.deleteCompanyCallback(id);
 
-  const companiesHeader = [
-    {key: 'id', name: 'ID'},
-    {key: 'name', name: 'Name'},
-    {key: 'description', name: 'Description'},
-    {name: 'Action'}
-  ]
-
-  const rowGetter = function (i) {
-    return props.companiesData[i];
-  };
-
   return (
       <div>
-        <ReactDataGrid
-            columns={ companiesHeader }
-            rowGetter={ rowGetter }
-            rowsCount={ props.companiesData.length }
-            minHeight={ 500 }
-            enableRowSelect='multi'
-            emptyRowsView={ NoRecords }
-        />
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHeaderColumn>ID</TableHeaderColumn>
+              <TableHeaderColumn>Name</TableHeaderColumn>
+              <TableHeaderColumn>Description</TableHeaderColumn>
+              <TableHeaderColumn>Action</TableHeaderColumn>
+            </TableRow>
+          </TableHeader>
+          <TableBody>{
+            props.companiesData.map((row, index) => (
+                <TableRow key={index} selected={row.selected}>
+                  <TableRowColumn>{index}</TableRowColumn>
+                  <TableRowColumn>{row.id}</TableRowColumn>
+                  <TableRowColumn>{row.name}</TableRowColumn>
+                  <TableRowColumn>{row.description}</TableRowColumn>
+                  <TableRowColumn>
+                    <ImageEdit />
+                    <ContentClear />
+                  </TableRowColumn>
+                </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
   );
 };
 
-const { arrayOf, func, string, shape } = React.PropTypes;
+const {arrayOf, func, string, shape} = React.PropTypes;
 
 const companyShape = {
   id: string,

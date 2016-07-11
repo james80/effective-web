@@ -9,9 +9,9 @@ module.exports = {
   },
   module: {
     loaders: [
-      {test: /\.js$/, loader: 'babel-loader'},
+      {test: /\.js$/, loader: 'babel'},
       {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url?limit=8192'},
-      {test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader'), include: __dirname}
+      {test: /\.css$/, loader: ExtractTextPlugin.extract('css'), include: __dirname}
     ]
   },
   plugins: [
