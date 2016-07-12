@@ -2,7 +2,7 @@ import React from "react";
 import {storiesOf, action, linkTo} from "@kadira/storybook";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import CompaniesGrid from "./companies-grid";
+import CompaniesGrid from "./CompaniesGrid";
 
 const sharedCompany = {
   id: '12345',
@@ -26,11 +26,11 @@ storiesOf('companies.CompaniesGrid', module)
         <CompaniesGrid companiesData={ [ { ...sharedCompany } ] }/>
     ))
 
-//.add('multiple companies', () => (
-//    <CompaniesGrid companiesData={ [
-//    { ...sharedCompany, id: 100 },
-//    { ...sharedCompany, id: 200 },
-//    { ...sharedCompany, id: 300 }
-//    ] }/>
-//))
+    .add('multiple companies', () => (
+        <CompaniesGrid companiesData={ [
+          { ...sharedCompany, id: 100 },
+          { ...sharedCompany, id: 200 },
+          { ...sharedCompany, id: 300 }
+        ] }/>
+    ))
 ;

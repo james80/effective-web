@@ -2,7 +2,7 @@ import React from "react";
 import {storiesOf, action, linkTo} from "@kadira/storybook";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import Companies from "./companies";
+import Companies from "./Companies";
 
 const sharedCompany = {
   id: '12345',

@@ -1,5 +1,6 @@
 import React from "react";
-import CompaniesGrid from "./companies-grid/companies-grid";
+import CompaniesHeader from "./CompaniesHeader/CompaniesHeader";
+import CompaniesGrid from "./CompaniesGrid/CompaniesGrid";
 
 const Companies = (props) => {
 
@@ -9,7 +10,7 @@ const Companies = (props) => {
 
   return (
       <div>
-        <h3>Soon to be CompaniesHeader...</h3>
+        <CompaniesHeader />
         <CompaniesGrid companiesData={ props.companies }/>
       </div>
   );
