@@ -1,10 +1,17 @@
 import React from "react";
+import RaisedButton from "material-ui/RaisedButton";
+import "./CompaniesHeader.css";
 
 const CompaniesHeader = () => {
 
   return (
       <div>
-        <h2>This is the Companies Header</h2>
+        <div>
+          <h2>Manage Your Companies</h2>
+        </div>
+        <div>
+          <RaisedButton label="Add Company"/>
+        </div>
       </div>
   );
 };
